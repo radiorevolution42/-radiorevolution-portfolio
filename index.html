@@ -196,6 +196,69 @@ main { padding:36px 48px; max-width:1400px; }
   .form-row { grid-template-columns:1fr; }
   .events-table td:nth-child(4) { display:none; }
 }
+
+/* BIO SECTION */
+.bio-hero { display:grid; grid-template-columns:340px 1fr; gap:40px; align-items:start; margin-bottom:40px; }
+.bio-photo { position:relative; }
+.bio-photo img { width:100%; border-radius:16px; object-fit:cover; aspect-ratio:3/4; background:var(--surface2); }
+.bio-photo-caption { font-size:10px; color:var(--text-muted); text-align:center; margin-top:8px; letter-spacing:1px; text-transform:uppercase; }
+.bio-links-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:16px; }
+.bio-pill { display:inline-flex; align-items:center; gap:6px; padding:8px 16px; border:1px solid var(--border); border-radius:999px; font-size:11px; color:var(--text-dim); text-decoration:none; transition:all .2s; }
+.bio-pill:hover { border-color:var(--accent); color:var(--text); }
+.bio-text h2 { font-size:28px; font-weight:900; margin-bottom:6px; }
+.bio-text .bio-tagline { color:var(--accent); font-size:12px; letter-spacing:3px; text-transform:uppercase; margin-bottom:24px; }
+.bio-lang-toggle { display:flex; gap:0; margin-bottom:24px; border:1px solid var(--border); border-radius:8px; overflow:hidden; width:fit-content; }
+.bio-lang-btn { padding:7px 18px; font-size:11px; font-weight:600; cursor:pointer; background:transparent; border:none; color:var(--text-muted); transition:all .2s; }
+.bio-lang-btn.active { background:var(--accent); color:#fff; }
+.bio-body { font-size:14px; line-height:1.85; color:var(--text-dim); display:none; }
+.bio-body.active { display:block; }
+.bio-body p { margin-bottom:16px; }
+.bio-facts { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-top:32px; }
+.bio-fact { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px 20px; }
+.bio-fact-label { font-size:9px; text-transform:uppercase; letter-spacing:1.5px; color:var(--text-muted); margin-bottom:4px; }
+.bio-fact-value { font-size:14px; font-weight:700; }
+
+/* PRESS SECTION */
+.press-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:28px; }
+.press-header h2 { font-size:22px; font-weight:900; }
+.press-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+.press-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:22px; text-decoration:none; color:var(--text); transition:all .2s; display:flex; flex-direction:column; gap:10px; }
+.press-card:hover { border-color:rgba(233,69,96,.4); transform:translateY(-2px); }
+.press-tag { display:inline-block; font-size:9px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; padding:3px 10px; border-radius:999px; }
+.press-tag.film { background:rgba(233,69,96,.15); color:var(--accent); }
+.press-tag.media { background:rgba(100,150,255,.15); color:#7fa6ff; }
+.press-tag.festival { background:rgba(80,200,120,.15); color:#5ec87a; }
+.press-tag.radio { background:rgba(255,180,50,.15); color:#ffb832; }
+.press-tag.event { background:rgba(180,100,255,.15); color:#c07aff; }
+.press-card-title { font-size:15px; font-weight:700; line-height:1.4; }
+.press-card-source { font-size:11px; color:var(--text-muted); }
+.press-card-desc { font-size:12px; color:var(--text-dim); line-height:1.6; }
+.press-card-arrow { font-size:12px; color:var(--accent); margin-top:auto; }
+
+/* PRESSKIT SECTION */
+.pk-section-title { font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted); margin:32px 0 16px; }
+.pk-section-title:first-child { margin-top:0; }
+.pk-photo-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px; }
+.pk-photo-item { position:relative; overflow:hidden; border-radius:10px; background:var(--surface); border:1px solid var(--border); aspect-ratio:1; cursor:pointer; }
+.pk-photo-item img { width:100%; height:100%; object-fit:cover; transition:transform .3s; display:block; }
+.pk-photo-item:hover img { transform:scale(1.04); }
+.pk-photo-overlay { position:absolute; inset:0; background:rgba(0,0,0,.5); opacity:0; transition:opacity .2s; display:flex; align-items:center; justify-content:center; }
+.pk-photo-item:hover .pk-photo-overlay { opacity:1; }
+.pk-download-btn { background:var(--accent); color:#fff; border:none; padding:8px 18px; border-radius:8px; font-size:11px; font-weight:700; cursor:pointer; text-decoration:none; }
+.pk-doc-list { display:flex; flex-direction:column; gap:10px; }
+.pk-doc-item { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:18px 22px; display:flex; align-items:center; justify-content:space-between; }
+.pk-doc-info { display:flex; align-items:center; gap:14px; }
+.pk-doc-icon { font-size:24px; }
+.pk-doc-name { font-size:14px; font-weight:700; }
+.pk-doc-meta { font-size:11px; color:var(--text-muted); margin-top:2px; }
+.pk-notice { background:var(--surface2); border:1px solid var(--border); border-radius:10px; padding:16px 20px; font-size:12px; color:var(--text-dim); line-height:1.7; margin-bottom:24px; }
+/* LIGHTBOX */
+.lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,.92); z-index:9999; align-items:center; justify-content:center; }
+.lightbox.open { display:flex; }
+.lightbox img { max-width:92vw; max-height:90vh; border-radius:8px; object-fit:contain; }
+.lightbox-close { position:absolute; top:24px; right:28px; font-size:28px; cursor:pointer; color:#fff; background:none; border:none; }
+@media(max-width:768px){ .bio-hero{grid-template-columns:1fr;} .press-grid{grid-template-columns:1fr;} }
+
 </style>
 </head>
 <body>
@@ -220,6 +283,9 @@ main { padding:36px 48px; max-width:1400px; }
   <div class="nav-tab" onclick="showSection('stats',this)">Stats</div>
   <div class="nav-tab" onclick="showSection('timeline',this)">Timeline</div>
   <div class="nav-tab" onclick="showSection('world',this)">World Tour</div>
+  <div class="nav-tab" onclick="showSection('bio',this)">Bio</div>
+  <div class="nav-tab" onclick="showSection('press',this)">Press</div>
+  <div class="nav-tab" onclick="showSection('presskit',this)">Press Kit</div>
   <div class="nav-tab" onclick="showSection('contact',this)">Contact</div>
 </nav>
 
@@ -298,6 +364,251 @@ main { padding:36px 48px; max-width:1400px; }
     <div class="bar-chart" id="venue-chart"></div>
   </div>
 </div>
+
+
+<!-- BIO -->
+<div id="section-bio" class="section">
+  <div class="section-wrap">
+    <div class="bio-hero">
+      <div class="bio-photo">
+        <img src="https://drive.google.com/thumbnail?id=1JQ8g4LntHiw82yl2CI7ay0DNfthv10w8&sz=w600" alt="Radio Revolution" loading="lazy">
+        <div class="bio-photo-caption">Photo © Radio Revolution</div>
+        <div class="bio-links-row">
+          <a class="bio-pill" href="https://ra.co/dj/radiorevolution" target="_blank">🎧 Resident Advisor</a>
+          <a class="bio-pill" href="https://soundcloud.com/radio_revolution_kr" target="_blank">☁️ SoundCloud</a>
+          <a class="bio-pill" href="mailto:djradiorevolution@gmail.com">✉️ Booking</a>
+        </div>
+      </div>
+      <div class="bio-text">
+        <h2>Radio Revolution</h2>
+        <div class="bio-tagline">DJ · Cultural Connector · Since 1999</div>
+        <div class="bio-lang-toggle">
+          <button class="bio-lang-btn active" onclick="switchBioLang('en',this)">EN</button>
+          <button class="bio-lang-btn" onclick="switchBioLang('ko',this)">KO</button>
+        </div>
+        <div class="bio-body active" id="bio-en">
+          <p>Radio Revolution is a veteran DJ and cultural connector from South Korea, whose journey through sound began in 1999. Drawing on decades of experience across the Asian underground scene, he has built a strong reputation for deeply curated sets that dissolve the boundaries between house, minimal techno, hypnotic minimal, and beyond.</p>
+          <p>His performances go far beyond mixing records — each set unfolds as a living narrative shaped by emotional intuition, rhythmic precision, and genre fluidity. Radio Revolution's musical identity is rooted in community and collaboration. He served as the music director of the underground festival <em>The Air House</em> and has been actively involved in producing a wide range of festivals and music events.</p>
+          <p>He runs <strong>RRRR Studio</strong> (Radio Revolution Reading Room) in Busan, a community radio station, DJ academy, and vinyl record space that also hosts events and livestreams. His collaborative project <em>Lifer</em>, co-created with Amon, encapsulates his vision of using music to dissolve borders and foster authentic regional connections.</p>
+          <p>With over two decades of accumulated experience and a progressive outlook toward the future, Radio Revolution continues to evolve — not as a follower of trends, but as a long-distance runner of underground culture.</p>
+        </div>
+        <div class="bio-body" id="bio-ko">
+          <p>Radio Revolution은 1999년부터 사운드를 통해 여정을 시작해온 한국의 베테랑 DJ이자 문화적 커넥터다. 아시아 언더그라운드 씬 전반에 걸친 수십 년의 경험을 바탕으로, 하우스, 미니멀 테크노, 힙노틱 미니멀을 넘나들며 장르의 경계를 허무는 깊이 있는 큐레이션 셋으로 확고한 명성을 쌓아왔다.</p>
+          <p>그의 퍼포먼스는 단순한 믹스를 넘어, 감정에 대한 직관과 리듬에 대한 섬세한 감각으로 빚어낸 하나의 살아 있는 서사다. Radio Revolution의 음악적 정체성은 커뮤니티와 협업에 뿌리를 두고 있다. 언더그라운드 페스티벌 <em>The Air House</em>의 음악 감독으로 활동했으며, 다양한 페스티벌과 뮤직 이벤트를 기획 제작해왔다.</p>
+          <p>그는 부산에서 <strong>RRRR 스튜디오</strong>(라디오레볼루션 리딩룸)를 운영하고 있다. 커뮤니티 라디오 방송국이자 DJ 아카데미, 바이닐 레코드 공간으로서 이벤트와 스트리밍까지 아우르는 창작 활동의 거점이다. Amon과 공동 창작한 프로젝트 <em>Lifer</em>는 음악을 통해 경계를 허물고 지역 간의 진정성 있는 연결을 만들어가고자 하는 그의 비전을 응축한 결과물이다.</p>
+          <p>20년이 넘는 시간 동안 축적된 경험과 미래를 향한 진보적인 시선을 바탕으로, Radio Revolution은 유행을 좇는 존재가 아니라 언더그라운드 문화를 오래 달리는 장거리 러너로서 지금도 끊임없이 진화하고 있다.</p>
+        </div>
+        <div class="bio-facts">
+          <div class="bio-fact"><div class="bio-fact-label">Based in</div><div class="bio-fact-value">Busan / Seoul, KR</div></div>
+          <div class="bio-fact"><div class="bio-fact-label">Active Since</div><div class="bio-fact-value">1999</div></div>
+          <div class="bio-fact"><div class="bio-fact-label">Genre</div><div class="bio-fact-value">House · Minimal · Techno</div></div>
+          <div class="bio-fact"><div class="bio-fact-label">Label / Studio</div><div class="bio-fact-value">RRRR Studio, Busan</div></div>
+          <div class="bio-fact"><div class="bio-fact-label">Booking</div><div class="bio-fact-value">djradiorevolution@gmail.com</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRESS -->
+<div id="section-press" class="section">
+  <div class="section-wrap">
+    <div class="press-header">
+      <h2>Press & Media</h2>
+      <span style="font-size:12px;color:var(--text-muted)">기사 · 인터뷰 · 미디어</span>
+    </div>
+    <div class="press-grid">
+
+      <a class="press-card" href="https://www.koreaherald.com/article/3461740" target="_blank">
+        <span class="press-tag film">Documentary</span>
+        <div class="press-card-title">My Grey Zone: Radio Revolution — JIMFF 2024</div>
+        <div class="press-card-source">Korea Herald</div>
+        <div class="press-card-desc">제천국제음악영화제 2024 공식 선정. 한국 언더그라운드 전자음악 씬을 22분으로 담은 다큐멘터리.</div>
+        <div class="press-card-arrow">Read → </div>
+      </a>
+
+      <a class="press-card" href="https://www.youtube.com/watch?v=vvbHe0ZSsLA" target="_blank">
+        <span class="press-tag film">Film Trailer</span>
+        <div class="press-card-title">My Grey Zone — Official Teaser</div>
+        <div class="press-card-source">YouTube · JIMFF 2024</div>
+        <div class="press-card-desc">Director Hong Hugh의 다큐멘터리 공식 티저 영상.</div>
+        <div class="press-card-arrow">Watch →</div>
+      </a>
+
+      <a class="press-card" href="https://mixmag.asia/feature/the-air-house-south-korea-review-radio-revolution" target="_blank">
+        <span class="press-tag media">Mixmag Asia</span>
+        <div class="press-card-title">The Air House Festival — Music Director</div>
+        <div class="press-card-source">Mixmag Asia</div>
+        <div class="press-card-desc">한국 언더그라운드 축제 The Air House 뮤직 디렉터로서의 큐레이션 인터뷰.</div>
+        <div class="press-card-arrow">Read →</div>
+      </a>
+
+      <a class="press-card" href="https://mixmag.asia/read/late-night-revelry-seoul-air-house-festival-local" target="_blank">
+        <span class="press-tag media">Mixmag Asia</span>
+        <div class="press-card-title">Late Night Revelry — Seoul Air House Festival</div>
+        <div class="press-card-source">Mixmag Asia</div>
+        <div class="press-card-desc">서울 레이브 씬과 Air House 페스티벌 현장 리뷰.</div>
+        <div class="press-card-arrow">Read →</div>
+      </a>
+
+      <a class="press-card" href="https://www.mixmag.kr/6789" target="_blank">
+        <span class="press-tag media">Mixmag Korea</span>
+        <div class="press-card-title">자연과 환경을 위한 댄스뮤직 이벤트</div>
+        <div class="press-card-source">Mixmag Korea</div>
+        <div class="press-card-desc">부산에서 열린 환경·자연 테마 댄스뮤직 이벤트 기획 스토리.</div>
+        <div class="press-card-arrow">Read →</div>
+      </a>
+
+      <a class="press-card" href="https://www.amsterdam-dance-event.nl/en/artists-speakers/radio-revolution/49369/" target="_blank">
+        <span class="press-tag festival">ADE 2018</span>
+        <div class="press-card-title">Amsterdam Dance Event — Artist & Speaker</div>
+        <div class="press-card-source">ADE · Amsterdam</div>
+        <div class="press-card-desc">세계 최대 댄스뮤직 컨퍼런스 ADE에서 아티스트 & 스피커로 참가.</div>
+        <div class="press-card-arrow">View →</div>
+      </a>
+
+      <a class="press-card" href="https://youtu.be/ZU7sbW8HtcU?si=bdwW8bfI0j1JCRFC" target="_blank">
+        <span class="press-tag radio">Radio · Le Mellotron</span>
+        <div class="press-card-title">Radio Revolution • DJ Set • Le Mellotron</div>
+        <div class="press-card-source">Le Mellotron, Paris</div>
+        <div class="press-card-desc">파리의 권위 있는 라디오 스테이션 Le Mellotron 세트.</div>
+        <div class="press-card-arrow">Listen →</div>
+      </a>
+
+      <a class="press-card" href="https://youtu.be/3Jktsu4B828?si=dWIgJ9wJOvtpjXNU" target="_blank">
+        <span class="press-tag radio">Radio · Spreadmix</span>
+        <div class="press-card-title">Spreadmix, Berlin — DJ Set</div>
+        <div class="press-card-source">Spreadmix · Berlin</div>
+        <div class="press-card-desc">베를린 Spreadmix 라디오 세션 녹화.</div>
+        <div class="press-card-arrow">Watch →</div>
+      </a>
+
+      <a class="press-card" href="https://youtu.be/BHQO2P4eAsU?si=634D7KxJ3lsAn8P0" target="_blank">
+        <span class="press-tag radio">Radio · 20ft Radio</span>
+        <div class="press-card-title">Radio Revolution @ 20ft Radio</div>
+        <div class="press-card-source">20ft Radio · Kyiv, Ukraine</div>
+        <div class="press-card-desc">키예프 인디 라디오 스테이션 20ft Radio 게스트 세션.</div>
+        <div class="press-card-arrow">Listen →</div>
+      </a>
+
+      <a class="press-card" href="https://youtu.be/Tvw182ZbiGc?si=oT12blUGH7xc9eZB" target="_blank">
+        <span class="press-tag radio">Radio · Fauve</span>
+        <div class="press-card-title">Radio Revolution Live on Fauve Radio</div>
+        <div class="press-card-source">Fauve Radio · Hong Kong</div>
+        <div class="press-card-desc">홍콩 Fauve Radio 라이브 스트리밍 세션.</div>
+        <div class="press-card-arrow">Listen →</div>
+      </a>
+
+      <a class="press-card" href="https://www.superpopfestival.com/lineupdjradio-revolutioneng" target="_blank">
+        <span class="press-tag festival">Festival</span>
+        <div class="press-card-title">Superpop Festival 2023 — Lineup</div>
+        <div class="press-card-source">Superpop Festival</div>
+        <div class="press-card-desc">2023 슈퍼팝 페스티벌 공식 라인업 페이지.</div>
+        <div class="press-card-arrow">View →</div>
+      </a>
+
+      <a class="press-card" href="https://youtu.be/qhwhHl-a7oU?si=sqtMe-L7Q3d7kiRw" target="_blank">
+        <span class="press-tag event">Live</span>
+        <div class="press-card-title">Radio Revolution @ Kudun Station · Barim</div>
+        <div class="press-card-source">구둔역 바림 · Korea</div>
+        <div class="press-card-desc">구둔역 바림 공연 현장 영상.</div>
+        <div class="press-card-arrow">Watch →</div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- PRESS KIT -->
+<div id="section-presskit" class="section">
+  <div class="section-wrap">
+    <div class="pk-notice">
+      📁 사진, 바이오, 기술 라이더 등 공식 프레스킷 자료입니다. 미디어·프레스 용도로 자유롭게 사용하실 수 있습니다.<br>
+      문의: <a href="mailto:djradiorevolution@gmail.com" style="color:var(--accent)">djradiorevolution@gmail.com</a>
+    </div>
+
+    <div class="pk-section-title">📸 Photo Gallery</div>
+    <div class="pk-photo-grid">
+      <div class="pk-photo-item" onclick="openLightbox('https://drive.google.com/uc?export=view&id=1JQ8g4LntHiw82yl2CI7ay0DNfthv10w8')">
+        <img src="https://drive.google.com/thumbnail?id=1JQ8g4LntHiw82yl2CI7ay0DNfthv10w8&sz=w400" alt="RR1" loading="lazy">
+        <div class="pk-photo-overlay"><a class="pk-download-btn" href="https://drive.google.com/uc?export=download&id=1JQ8g4LntHiw82yl2CI7ay0DNfthv10w8" onclick="event.stopPropagation()" download>⬇ Download</a></div>
+      </div>
+      <div class="pk-photo-item" onclick="openLightbox('https://drive.google.com/uc?export=view&id=11d_iT3QDRJJLR6aBEIPcwtoJzHOJJk1m')">
+        <img src="https://drive.google.com/thumbnail?id=11d_iT3QDRJJLR6aBEIPcwtoJzHOJJk1m&sz=w400" alt="RR2" loading="lazy">
+        <div class="pk-photo-overlay"><a class="pk-download-btn" href="https://drive.google.com/uc?export=download&id=11d_iT3QDRJJLR6aBEIPcwtoJzHOJJk1m" onclick="event.stopPropagation()" download>⬇ Download</a></div>
+      </div>
+      <div class="pk-photo-item" onclick="openLightbox('https://drive.google.com/uc?export=view&id=1Khm0mmOYuWTkSzXS_L8H0LXWr3TeeS-n')">
+        <img src="https://drive.google.com/thumbnail?id=1Khm0mmOYuWTkSzXS_L8H0LXWr3TeeS-n&sz=w400" alt="RR3" loading="lazy">
+        <div class="pk-photo-overlay"><a class="pk-download-btn" href="https://drive.google.com/uc?export=download&id=1Khm0mmOYuWTkSzXS_L8H0LXWr3TeeS-n" onclick="event.stopPropagation()" download>⬇ Download</a></div>
+      </div>
+      <div class="pk-photo-item" onclick="openLightbox('https://drive.google.com/uc?export=view&id=1zF46c1VfEBoQBODXkZNATxrcPQ0KkbF0')">
+        <img src="https://drive.google.com/thumbnail?id=1zF46c1VfEBoQBODXkZNATxrcPQ0KkbF0&sz=w400" alt="RR4" loading="lazy">
+        <div class="pk-photo-overlay"><a class="pk-download-btn" href="https://drive.google.com/uc?export=download&id=1zF46c1VfEBoQBODXkZNATxrcPQ0KkbF0" onclick="event.stopPropagation()" download>⬇ Download</a></div>
+      </div>
+      <div class="pk-photo-item" onclick="openLightbox('https://drive.google.com/uc?export=view&id=137e7jvxkHTvXTzJQvfDoAges5o22YL2q')">
+        <img src="https://drive.google.com/thumbnail?id=137e7jvxkHTvXTzJQvfDoAges5o22YL2q&sz=w400" alt="RR5" loading="lazy">
+        <div class="pk-photo-overlay"><a class="pk-download-btn" href="https://drive.google.com/uc?export=download&id=137e7jvxkHTvXTzJQvfDoAges5o22YL2q" onclick="event.stopPropagation()" download>⬇ Download</a></div>
+      </div>
+      <div class="pk-photo-item" onclick="openLightbox('https://drive.google.com/uc?export=view&id=1Td6a7HyW-VyOAeAi4WiOkNwGsnw8kL1m')">
+        <img src="https://drive.google.com/thumbnail?id=1Td6a7HyW-VyOAeAi4WiOkNwGsnw8kL1m&sz=w400" alt="RR6" loading="lazy">
+        <div class="pk-photo-overlay"><a class="pk-download-btn" href="https://drive.google.com/uc?export=download&id=1Td6a7HyW-VyOAeAi4WiOkNwGsnw8kL1m" onclick="event.stopPropagation()" download>⬇ Download</a></div>
+      </div>
+      <div class="pk-photo-item" onclick="openLightbox('https://drive.google.com/uc?export=view&id=15iO8qQCGvebMTENH-nkJw0l6WYu7E1U8')">
+        <img src="https://drive.google.com/thumbnail?id=15iO8qQCGvebMTENH-nkJw0l6WYu7E1U8&sz=w400" alt="RR7" loading="lazy">
+        <div class="pk-photo-overlay"><a class="pk-download-btn" href="https://drive.google.com/uc?export=download&id=15iO8qQCGvebMTENH-nkJw0l6WYu7E1U8" onclick="event.stopPropagation()" download>⬇ Download</a></div>
+      </div>
+      <div class="pk-photo-item" onclick="openLightbox('https://drive.google.com/uc?export=view&id=1GawKqQIfG32Q2y8NSiCG7x8XVBev36sO')">
+        <img src="https://drive.google.com/thumbnail?id=1GawKqQIfG32Q2y8NSiCG7x8XVBev36sO&sz=w400" alt="RR8" loading="lazy">
+        <div class="pk-photo-overlay"><a class="pk-download-btn" href="https://drive.google.com/uc?export=download&id=1GawKqQIfG32Q2y8NSiCG7x8XVBev36sO" onclick="event.stopPropagation()" download>⬇ Download</a></div>
+      </div>
+      <div class="pk-photo-item" onclick="openLightbox('https://drive.google.com/uc?export=view&id=1Bl8DHQ7SEL36yoIs4AEr7e-1O6YUyX_q')">
+        <img src="https://drive.google.com/thumbnail?id=1Bl8DHQ7SEL36yoIs4AEr7e-1O6YUyX_q&sz=w400" alt="RR9" loading="lazy">
+        <div class="pk-photo-overlay"><a class="pk-download-btn" href="https://drive.google.com/uc?export=download&id=1Bl8DHQ7SEL36yoIs4AEr7e-1O6YUyX_q" onclick="event.stopPropagation()" download>⬇ Download</a></div>
+      </div>
+    </div>
+
+    <div class="pk-section-title" style="margin-top:40px">📄 Documents</div>
+    <div class="pk-doc-list">
+      <div class="pk-doc-item">
+        <div class="pk-doc-info">
+          <span class="pk-doc-icon">📝</span>
+          <div>
+            <div class="pk-doc-name">Artist Biography</div>
+            <div class="pk-doc-meta">EN / KO · PDF · 68 KB</div>
+          </div>
+        </div>
+        <a class="pk-download-btn" href="https://drive.google.com/uc?export=download&id=1iPbFWy0R-m6Wl_0cYzsbWk2E2MX4R-5F" download>⬇ Download</a>
+      </div>
+      <div class="pk-doc-item">
+        <div class="pk-doc-info">
+          <span class="pk-doc-icon">🎛️</span>
+          <div>
+            <div class="pk-doc-name">Technical Rider</div>
+            <div class="pk-doc-meta">Pioneer CDJ-2000 NXS2 · Xone 92/96 · PDF · 93 KB</div>
+          </div>
+        </div>
+        <a class="pk-download-btn" href="https://drive.google.com/uc?export=download&id=1rNm8b9jbXSkn4JgoGRli1Pwo3V0dKAwy" download>⬇ Download</a>
+      </div>
+      <div class="pk-doc-item">
+        <div class="pk-doc-info">
+          <span class="pk-doc-icon">📁</span>
+          <div>
+            <div class="pk-doc-name">Full Press Kit Folder</div>
+            <div class="pk-doc-meta">Google Drive — 사진 · 문서 전체</div>
+          </div>
+        </div>
+        <a class="pk-download-btn" href="https://drive.google.com/drive/folders/1DnNIh-CTZ3VLoDxrpYR1qsiZMB9Xcaq6" target="_blank">Open →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
 
 <!-- CONTACT -->
 <div id="section-contact" class="section">
@@ -490,6 +801,24 @@ function showSection(name,tab){
   document.getElementById('section-'+name).classList.add('active');
   tab.classList.add('active');
 }
+
+function switchBioLang(lang, btn){
+  document.querySelectorAll('.bio-lang-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.bio-body').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('bio-'+lang).classList.add('active');
+}
+function openLightbox(src){
+  document.getElementById('lightbox-img').src=src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  document.getElementById('lightbox-img').src='';
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeLightbox(); });
 
 async function handleSubmit(e){
   const form=e.target;
